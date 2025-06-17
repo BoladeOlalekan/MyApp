@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9933f4bb5b.js" crossorigin="anonymous"></script>
 
+    <script type="module" src="./JS/signin.js" defer></script>
+    <script type="module" src="./JS/signup.js" defer></script>
 </head>
 <body>
     <div class="go-up">
@@ -40,7 +42,18 @@
                     <li class="education"><a href="#education">EDUCATION</a></li>
                     <li class="certification"><a href="#certification">CERTIFICATION</a></li>
                     <li class="connect"><a href="#connect">CONNECT</a></li>
+                    <li class="profile">PROFILE
+                        <div class="user-profile-desktop">
+                            <p id="user-email"></p>
+                            <a href="#" id="signout-button">Sign Out</a>
+                        </div>
+                    </li>
                 </ul>
+
+                <div class="user-profile-mobile">
+                    <p id="user-email">lekanseyibolade@gmail.com</p>
+                    <a href="#" id="signout-button">Sign Out</a>
+                </div>
             </nav>
         </header>
 
