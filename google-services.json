@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "507802871390",
+    "project_id": "bincom-assignments",
+    "storage_bucket": "bincom-assignments.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507802871390:android:23203c549b77c5cfc2f6cf",
+        "android_client_info": {
+          "package_name": "io.cordova.hellocordova"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBukmQ4WjTNcl3aHN1jVKwT8XNPN6An__w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
