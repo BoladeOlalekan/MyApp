@@ -1,6 +1,6 @@
 // Import the functions you need from Firebase SDKs
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js';
+import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -19,40 +19,20 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication
 const auth = getAuth(app);
 
-// SET PERSISTENCE
-setPersistence(auth, browserLocalPersistence)
-.catch((error) => {
-  console.error(error);
-});
 
-//SIGN IN FORM
-document.getElementById("signin-button").addEventListener("click", function (e) {
+// SIGN OUT
+document.getElementById("signout-button").addEventListener("click", function (e) {
   e.preventDefault();
 
-  const button = this;
-  const spinner = document.getElementById("spinner");
-  button.disabled = true;
-  spinner.style.display = "block";
-
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-  // Signed In
-  const user = userCredential.user;
-  alert("Logging In...");
-  window.location.href = "./index.html";
-  // Show profile section after signup
-  document.getElementById("user-email").textContent = user.email;
+  signOut(auth)
+  .then(() => {
+  alert("Signing out...");
+    document.querySelector(".signUp-form").style.display = "none";
+    document.querySelector(".signIn-form").style.display = "block";
+    window.location.href = "./auth.html";
   })
   .catch((error) => {
-    const errorMessage = error.message;
-    alert(errorMessage);
-  })
-  .finally(() => {
-    button.disabled = false;
-    spinner.style.display = "none";
+    alert(error.message);
   });
 });
 

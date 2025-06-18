@@ -36,10 +36,11 @@ document.getElementById("signup-button").addEventListener("click", function (e) 
     // Signed up
     const user = userCredential.user;
     alert("Account created!");
-    window.location.href = "./signin.html"
+    document.querySelector(".signIn-form").style.display = "block";
+    document.querySelector(".signUp-form").style.display = "none";
+    //window.location.href = "./signin.html"
     })
     .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
     })
@@ -48,32 +49,3 @@ document.getElementById("signup-button").addEventListener("click", function (e) 
         spinner.style.display = "none";
     });
 });
-
-
-/*
-// Handle user sign-out
-document.getElementById("signout-button").addEventListener("click", function () {
-    signOut(auth)
-    .then(() => {
-        window.location.href = "/www/signin.html"; // Redirect to the sign-in page
-    })
-    .catch((error) => {
-        alert(error.message);
-    });
-});
-
-// Listen for authentication state changes
-onAuthStateChanged(auth, function (user) {
-    if (user && user.emailVerified) {
-        document.getElementById("user-email").textContent = user.email;
-        document.getElementById("signup-form").style.display = "none";
-        document.getElementById("signin-form").style.display = "none";
-
-    } else {
-        document.getElementById("signup-form").style.display = "none";
-        document.getElementById("signin-form").style.display = "none";
-        document.getElementById("user-profile").style.display = "none";
-
-    }
-});
-*/
